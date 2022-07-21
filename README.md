@@ -8,10 +8,11 @@ syntax : add-nbo <file1> <file2>
 sample : add-nbo a.bin c.bin
 
 # example
-$ echo -n -e \\x00\\x00\\x03\\xe8 > thousand.bin
+```$ echo -n -e \\x00\\x00\\x03\\xe8 > thousand.bin
 $ echo -n -e \\x00\\x00\\x01\\xf4 > five-hundred.bin
 $ ./add-nbo thousand.bin five-hundred.bin
-1000(0x3e8) + 500(0x1f4) = 1500(0x5dc)
+1000(0x3e8) + 500(0x1f4) = 1500(0x5dc)```
+
 상세
 4바이트 정수를 처리하기 위해서 uint32_t 형식을 사용한다(stdint.h 파일을 include하면 uint32_t를 사용할 수 있음).
 
