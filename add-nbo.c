@@ -46,7 +46,7 @@ int main(int argc, char* argv[]){
 	n1 = ntohl(n1);
 	n2 = ntohl(n2);	
 	sum = n1 + n2;
-	printf("result: %d(0x%x) + %d(0x%x) = %d(0x%x)\n", n1, n1, n2, n2, sum, sum); 
+	printf("%d(0x%x) + %d(0x%x) = %d(0x%x)\n", n1, n1, n2, n2, sum, sum); 
 
 	//stream close
 	if(fp1 != NULL) fclose(fp1);
