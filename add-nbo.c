@@ -5,13 +5,18 @@
 int main(int argc, char* argv[]){
 
 	char a[25] = "";
-	char b[24] = "";
+	char b[25] = "";
+
+	if ( argc != 3){
+		printf("syntax: ./add-nbo <file1> <file2>\n");
+		return 1;
+	}
 
 	memcpy(a, argv[1], strlen(argv[1]));
 	memcpy(b, argv[2], strlen(argv[2]));
 
-	printf("%s\n", a);
-	printf("%s\n", b);
+	//printf("%s\n", a);
+	//printf("%s\n", b);
 
 	FILE *fp1= fopen(a, "rb");
         FILE *fp2= fopen(b, "rb");
