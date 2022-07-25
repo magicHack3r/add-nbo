@@ -23,7 +23,7 @@ int main(int argc, char* argv[]){
 
 	if(fp1 == NULL || fp2 == NULL){
 		puts("file read error");
-		return -1;
+		return 1;
 	}
 
 	//file read
