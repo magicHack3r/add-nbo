@@ -15,14 +15,23 @@ int main(int argc, char* argv[]){
 	memcpy(a, argv[1], strlen(argv[1]));
 	memcpy(b, argv[2], strlen(argv[2]));
 
-	//printf("%s\n", a);
-	//printf("%s\n", b);
+	a[strlen(argv[1])]=0;
+	b[strlen(argv[2])]=0;
 
 	FILE *fp1= fopen(a, "rb");
         FILE *fp2= fopen(b, "rb");
 
-	if(fp1 == NULL || fp2 == NULL){
-		puts("file read error");
+	// check file pointer
+        unsigned char chk_fail_fp = 0;	
+	if(fp1 == NULL){
+		chk_fail_fp=1;
+		printf("No such file '%s'\n", a);
+	}
+	if(fp2 == NULL){
+		chk_fail_fp=1;
+		printf("No such file '%s'\n", b);
+	}
+	if(chk_fail_fp == 1){
 		return 1;
 	}
 
