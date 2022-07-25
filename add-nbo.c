@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <netinet/in.h>
 #include <string.h>
+#include <stdint.h>
 
 int main(int argc, char* argv[]){
 
@@ -22,7 +23,7 @@ int main(int argc, char* argv[]){
         FILE *fp2= fopen(b, "rb");
 
 	// check file pointer
-        unsigned char chk_fail_fp = 0;	
+        uint8_t chk_fail_fp = 0;	
 	if(fp1 == NULL){
 		chk_fail_fp=1;
 		printf("No such file '%s'\n", a);
@@ -36,12 +37,12 @@ int main(int argc, char* argv[]){
 	}
 
 	//file read
-	int n1, n2;
-	fread(&n1, sizeof(int), 1, fp1);
-	fread(&n2, sizeof(int), 1, fp2);
+	uint32_t n1, n2;
+	fread(&n1, sizeof(uint32_t), 1, fp1);
+	fread(&n2, sizeof(uint32_t), 1, fp2);
 
 	//result 
-	int sum;
+	uint32_t sum;
 	n1 = ntohl(n1);
 	n2 = ntohl(n2);	
 	sum = n1 + n2;
